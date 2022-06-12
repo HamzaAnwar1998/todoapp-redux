@@ -29,9 +29,10 @@ function App() {
       <Form editFormVisibility={editFormVisibility} editTodo={editTodo}
       cancelUpdate={cancelUpdate}/>
       <Todos handleEditClick={handleEditClick} editFormVisibility={editFormVisibility}/>
-      {todos.length > 1&&(
+      {todos.length > 1 && (
         <button className='btn btn-danger btn-md delete-all'
         onClick={()=>dispatch(deleteAll())}>DELETE ALL</button>
+      )}
       )}
     </div>
   );

@@ -1,7 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../redux/todoapp/actions';
-import { handleEditSubmit } from '../redux/todoapp/actions';
 
 export const Form = ({editFormVisibility, editTodo, cancelUpdate}) => {
 
@@ -27,16 +26,6 @@ export const Form = ({editFormVisibility, editTodo, cancelUpdate}) => {
       dispatch(addTodo(todoObj))
   }
 
-  const editSubmit=(e)=>{
-    e.preventDefault();
-    let editedObj={
-      id: editTodo.id,
-      todo: editTodo.todo,
-      completed: false
-    }
-    dispatch(handleEditSubmit(editedObj))
-  }
-
   return (
     <>
       {editFormVisibility===false?(
@@ -49,7 +38,7 @@ export const Form = ({editFormVisibility, editTodo, cancelUpdate}) => {
           </div>
         </form>
       ):(
-        <form className='form-group custom-form' onSubmit={editSubmit}>
+        <form className='form-group custom-form'>
           <label>Update your todo-items</label>
           <div className='input-and-btn'>
               <input type="text" className='form-control' required
