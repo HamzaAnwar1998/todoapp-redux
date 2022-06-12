@@ -15,17 +15,3 @@ export const deleteAll = () =>{
         type: DELETE_ALL
     }
 }
-
-export const removeTodo=(payload)=>{
-    return{
-        type: REMOVE_TODO,
-        payload
-    }
-}
-
-export const handleEditSubmit=(payload)=>{
-    return{
-        type: UPDATE_TODO,
-        payload
-    }
-}
